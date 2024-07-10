@@ -1,4 +1,7 @@
+
+import 'package:book_app/ui/home.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -9,7 +12,23 @@ class Splash extends StatefulWidget {
 
 class _SplashState extends State<Splash> {
   @override
+  void initState() {
+    Future.delayed(Duration(seconds: 3), () {
+      Get.offAll(() => Home());
+    });
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return const Scaffold(
+      body: SafeArea(
+          child: Center(
+        child: Text(
+          "Book App",
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+        ),
+      )),
+    );
   }
 }
