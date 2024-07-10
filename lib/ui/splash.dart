@@ -1,5 +1,5 @@
 
-import 'package:book_app/ui/home.dart';
+import 'package:book_app/ui/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -14,7 +14,7 @@ class _SplashState extends State<Splash> {
   @override
   void initState() {
     Future.delayed(Duration(seconds: 3), () {
-      Get.offAll(() => Home());
+      Get.offAll(() => BottomNavBar());
     });
     super.initState();
   }
