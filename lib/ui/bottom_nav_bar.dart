@@ -16,6 +16,51 @@ class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Book App"),
+        titleSpacing: 0,
+        backgroundColor: Colors.blueAccent,
+      ),
+      drawer: Drawer(
+        backgroundColor: Colors.blue,
+        child: ListView(
+          children: [
+            SizedBox(
+              height: 40,
+            ),
+            Image.asset(
+              "assets/images/book1.png",
+              height: 100,
+            ),
+            const Align(
+              alignment: Alignment.center,
+              child: Text(
+                "Poem book app",
+                style: TextStyle(color: Colors.black, fontSize: 16),
+              ),
+            ),
+            const Divider(),
+            const SizedBox(
+              height: 20,
+            ),
+             ListTile(
+              title: Text("Home"),
+              leading: Icon(Icons.home),
+              onTap: (){
+                Navigator.pop(context);
+              },
+            ),
+            const ListTile(
+              title: Text("About"),
+              leading: Icon(Icons.info_outline),
+            ),
+            const ListTile(
+              title: Text("More Apps"),
+              leading: Icon(Icons.dashboard),
+            ),
+          ],
+        ),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentindex,
         onTap: (index) {
